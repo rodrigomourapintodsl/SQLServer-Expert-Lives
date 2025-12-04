@@ -1,0 +1,873 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/5/2024 9:04:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVSQL2022"
+  DTS:CreatorName="SRVSQL2022\Landry"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{CDC02AFA-41AB-4092-A12F-C3D06BC95A4E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="OlaMundo"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{33EB395E-21ED-4DF6-A0AA-CD6ED7733CE9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3012765-911A-4965-B806-3793D6027DC4}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVSQL2022;Initial Catalog=Aula;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AE1E1854-20C0-4FB7-9D36-33ED455A78AF}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\_LIVE\MUNICIPIOS.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UF"
+              DTS:DTSID="{864FD5D3-93D0-4836-8B8B-EC8021BAB1B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nome_UF"
+              DTS:DTSID="{C5568472-46DF-48D3-9179-DF4FD1C399F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MesorregiaoGeografica_COD"
+              DTS:DTSID="{123FA175-72D1-4C97-9B34-518026B2CCF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MesorregiaoGeografica"
+              DTS:DTSID="{60504263-391D-4123-A141-7C6D5323A54D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MicrorregiaoGeografica_COD"
+              DTS:DTSID="{F58C3990-7689-4114-A435-36CF2994BBCE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MicrorregiaoGeografica"
+              DTS:DTSID="{242EA766-4042-4C67-B259-F90166F98C14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Municipio_COD"
+              DTS:DTSID="{404A6F23-3045-4672-B5F3-110797B83C37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Municipio_COD_Completo"
+              DTS:DTSID="{4EC7B538-5258-4E93-A7E9-5410341DFE1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Municipio"
+              DTS:DTSID="{A4298817-25A1-41FE-8D3B-041AD7A5D04E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{D6506456-581F-4A87-93CA-773288B2DEC0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - MUNICIPIOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - MUNICIPIOS"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MUNICIPIOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[UF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UF"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[UF]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[UF]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[Nome_UF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Nome_UF"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Nome_UF]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Nome_UF]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[MesorregiaoGeografica_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MesorregiaoGeografica_COD"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MesorregiaoGeografica_COD]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica_COD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[MesorregiaoGeografica]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="MesorregiaoGeografica"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MesorregiaoGeografica]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[MicrorregiaoGeografica_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MicrorregiaoGeografica_COD"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MicrorregiaoGeografica_COD]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica_COD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[MicrorregiaoGeografica]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="MicrorregiaoGeografica"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MicrorregiaoGeografica]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[Municipio_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Municipio_COD"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio_COD]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[Municipio_COD_Completo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Municipio_COD_Completo"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio_COD_Completo]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD_Completo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].Columns[Municipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Municipio"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio]"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[UF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Nome_UF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Nome_UF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MesorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MesorregiaoGeografica_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MesorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MesorregiaoGeografica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MicrorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MicrorregiaoGeografica_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[MicrorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MicrorregiaoGeografica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Municipio_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio_COD_Completo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Municipio_COD_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input].ExternalColumns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Municipio" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - MUNICIPIOS_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[UF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[UF]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[UF]"
+                      name="UF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Nome_UF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Nome_UF]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Nome_UF]"
+                      name="Nome_UF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MesorregiaoGeografica_COD]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica_COD]"
+                      name="MesorregiaoGeografica_COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MesorregiaoGeografica]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MesorregiaoGeografica]"
+                      name="MesorregiaoGeografica"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MicrorregiaoGeografica_COD]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica_COD]"
+                      name="MicrorregiaoGeografica_COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MicrorregiaoGeografica]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[MicrorregiaoGeografica]"
+                      name="MicrorregiaoGeografica"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio_COD]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD]"
+                      name="Municipio_COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD_Completo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio_COD_Completo]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio_COD_Completo]"
+                      name="Municipio_COD_Completo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].Columns[Municipio]"
+                      name="Municipio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[UF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Nome_UF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Nome_UF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MesorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MesorregiaoGeografica_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MesorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MesorregiaoGeografica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MicrorregiaoGeografica_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MicrorregiaoGeografica_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[MicrorregiaoGeografica]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MicrorregiaoGeografica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Municipio_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio_COD_Completo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Municipio_COD_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output].ExternalColumns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Municipio" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - MUNICIPIOS.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - MUNICIPIOS_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop table(s) SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{08896088-F404-4577-B7F6-894EBB28022B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop table(s) SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3012765-911A-4965-B806-3793D6027DC4}"
+          SQLTask:SqlStatementSource="drop table [dbo].[MUNICIPIOS]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{CF43D7E7-D09D-4E50-BFC1-BAD0AF0FC416}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3012765-911A-4965-B806-3793D6027DC4}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[MUNICIPIOS] (&#xA;[UF] varchar(50),&#xA;[Nome_UF] varchar(100),&#xA;[MesorregiaoGeografica_COD] varchar(50),&#xA;[MesorregiaoGeografica] varchar(100),&#xA;[MicrorregiaoGeografica_COD] varchar(50),&#xA;[MicrorregiaoGeografica] varchar(100),&#xA;[Municipio_COD] varchar(50),&#xA;[Municipio_COD_Completo] varchar(50),&#xA;[Municipio] varchar(100)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{08D2182B-0502-4B00-A66D-400438E63FA3\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{08D2182B-0502-4B00-A66D-400438E63FA3}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{08D2182B-0502-4B00-A66D-400438E63FA3}"
+      DTS:To="Package\Data Flow Task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{BCA92C12-7933-476D-885C-630F67D3C5E2\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{BCA92C12-7933-476D-885C-630F67D3C5E2}"
+      DTS:From="Package\Drop table(s) SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{BCA92C12-7933-476D-885C-630F67D3C5E2}"
+      DTS:To="Package\Preparation SQL Task 1"
+      DTS:Value="2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="322.5,324.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Drop table(s) SQL Task 1"
+          TopLeft="303.5,120.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="307.5,222.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{08D2182B-0502-4B00-A66D-400438E63FA3\}]"
+          TopLeft="402.5,264.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{BCA92C12-7933-476D-885C-630F67D3C5E2\}]"
+          TopLeft="402.5,162.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Data Flow Task 1\Source - MUNICIPIOS_csv"
+          TopLeft="260.5,99.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Data Flow Task 1\Destination - MUNICIPIOS"
+          TopLeft="260.5,201.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="361.5,141.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
